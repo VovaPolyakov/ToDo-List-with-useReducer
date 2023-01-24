@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { DataContextProvider } from './context/DataContext/DataContext';
+import ToDoList from './components/ToDoList/ToDoList';
+import ToDoItem from './components/ToDoItem/ToDoItem';
+import ToDoInput from './components/ToDoInput/ToDoInput';
+import ToDoContainer from './components/ToDoContainer/ToDoContainer';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DataContextProvider>
+      <ToDoContainer>
+        <ToDoList>
+          <ToDoItem/>
+        </ToDoList>
+        <ToDoInput/>
+      </ToDoContainer>
+    </DataContextProvider>
   );
 }
 
