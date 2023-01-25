@@ -215,4 +215,13 @@ button {
   font-weight: 500;
   font-size: 17px;
   color: rgb(0, 0, 0);
+  list-style: none;
+ }
+ ul{
+  padding: 0;
+ }
+ .delete{
+  cursor: pointer;
+  width: 20px;
+  height: 30px;
  }

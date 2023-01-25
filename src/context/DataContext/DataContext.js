@@ -1,18 +1,19 @@
 import { createContext, useReducer } from "react";
+import uuid from 'react-uuid';
 
 
 const initionalState = {
     items:[
-        {id:1,text:'Make a ToDo list.',status:false}
+        {id:uuid(),text:'Make a ToDo list.',status:false}
     ]
 }
 const reducer = (state,action) => {
     switch(action.type){
         case 'ADD_TODO':
-            return {items:[...state.items,{id:state.items.length + 1,text:action.text,status:false}]};
-        case 'DELETE_TODO':
+            return {items:[...state.items,{id:uuid(),text:action.text,status:false}]};
+        case 'CHANGE_TODO':
             const updateItems = state.items.map((item) => {
-                 if(item.id == action.id){
+                 if(item.id === action.id){
                     return {
                         ...item,
                         status: action.status
@@ -20,8 +21,10 @@ const reducer = (state,action) => {
                 }
                 return item
             })
-            return {items:updateItems}
-
+            return {items:updateItems};
+        case 'DELETE_TODO':
+            const clearItems = state.items.filter((item) => item.id != action.id) 
+            return {items:clearItems};
             
         default:
             return {...state}
