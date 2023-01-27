@@ -1,6 +1,6 @@
 
 import './App.css';
-import { DataContextProvider } from './context/DataContext/DataContext';
+import { DataContextProvider } from './reducer';
 import ToDoList from './components/ToDoList/ToDoList';
 import ToDoItem from './components/ToDoItem/ToDoItem';
 import ToDoInput from './components/ToDoInput/ToDoInput';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {DataContext} from '../../context/DataContext/DataContext'
 import { useContext } from 'react'
 import {FiTrash2} from 'react-icons/fi'
